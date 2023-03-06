@@ -75,7 +75,7 @@ export class NodeREDApp {
       return require(path.join(this.status.userDir, SETTINGS_FILE))
     } catch(err) {
       log.error(err)
-      return {}  
+      return {}
     }
   }
 
@@ -88,7 +88,7 @@ export class NodeREDApp {
       httpNodeRoot: this.uiPath,
       userDir: this.status.userDir,
       flowFile: this.status.currentFile,
-      storageModule: CustomStorage, 
+      storageModule: CustomStorage,
       credentialSecret: this.status.credentialSecret,
       httpNodeCors: {
         origin: "*",
@@ -112,7 +112,7 @@ export class NodeREDApp {
         palette: {
           editable: true
         },
-        menu: { 
+        menu: {
           "menu-item-help": {
             label: app.name,
             url: HELP_WEB_URL
@@ -193,7 +193,7 @@ export class NodeREDApp {
     return `http://${this.listenIp}:${this.listenPort}${this.uiPath}`
   }
 
-  // based on the code in node-red/red.js 
+  // based on the code in node-red/red.js
   private basicAuthMiddleware(user: string, pass: string) {
     let localCachedPassword: string;
     const checkPassword = function(p: string) {
@@ -360,7 +360,7 @@ export class NodeREDApp {
       this.error(err, "fail to add a node. check detail in log.");
     }
   }
-  
+
   public async execNpmInstall(args: string) {
     try {
       const before = this.loadPackageInfo(path.join(this.status.userDir, "package.json"));

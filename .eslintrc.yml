@@ -5,9 +5,9 @@ extends:
   - 'eslint:recommended'
   - 'plugin:@typescript-eslint/recommended'
   - 'plugin:prettier/recommended'
-  - 'prettier/@typescript-eslint'
 plugins:
   - '@typescript-eslint'
+  - 'prettier'
 globals:
   Atomics: readonly
   SharedArrayBuffer: readonly
@@ -17,11 +17,10 @@ parserOptions:
   sourceType: module
   project: './tsconfig.json'
 rules:
+  prettier/prettier: error
   indent:
-    - 'error'
+    - error
     - 2
-  'prettier/prettier':
-    - printWidth: 120
   '@typescript-eslint/explicit-member-accessibility': off
   '@typescript-eslint/explicit-function-return-type': off
   '@typescript-eslint/no-explicit-any': off
